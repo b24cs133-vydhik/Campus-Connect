@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Campus Connect · KITSW</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<style>
+:root{--navy:#101B3D;--pri:#2563EB;--lb:#EAF2FF;--bg:#F5F7FB;--card:#fff;--tx:#101B3D;--mu:#5b6482;--bd:#dde3f0;--pu:#7C3AED;--ok:#15803d;--warn:#b45309;--sh:0 4px 18px rgba(16,27,61,.08);--mapbg:#eef3fb;--blk:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1126;--card:#141d3b;--tx:#eef2ff;--mu:#9aa6cc;--bd:#26335f;--lb:#1b2a57;--mapbg:#0f1833;--blk:#1a2550;--pri:#5b8cff;--sh:none}}
+:root[data-theme="dark"]{--bg:#0b1126;--card:#141d3b;--tx:#eef2ff;--mu:#9aa6cc;--bd:#26335f;--lb:#1b2a57;--mapbg:#0f1833;--blk:#1a2550;--pri:#5b8cff;--sh:none}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--pri)}.w{max-width:1180px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--bd)}
+header .w{display:flex;align-items:center;gap:14px;height:56px}
+.logo{font-weight:800;letter-spacing:.5px}.logo b{color:var(--pri)}nav{margin-left:auto;display:flex;gap:16px;align-items:center;font-size:14px}nav a{text-decoration:none;color:var(--mu)}
+button,.btn{font:inherit;cursor:pointer;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;padding:8px 14px;text-decoration:none;display:inline-block}
+.pri{background:var(--pri);border-color:var(--pri);color:#fff}.pu{background:var(--pu);border-color:var(--pu);color:#fff}
+.hero{padding:44px 0 26px}.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.12;margin:6px 0 10px;max-width:15em}
+.hero p{color:var(--mu);max-width:42em;margin:0 0 18px}.tag{color:var(--pu);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;box-shadow:var(--sh)}
+h2{font-size:24px;margin:34px 0 6px}.sub{color:var(--mu);margin:0 0 16px}
+.app{display:grid;grid-template-columns:290px 1fr 320px;gap:14px;align-items:start}
+@media(max-width:980px){.app{grid-template-columns:1fr}}
+input[type=search]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.chip{padding:4px 10px;border-radius:99px;font-size:13px}.chip.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.list{max-height:380px;overflow:auto;display:flex;flex-direction:column;gap:6px}
+.it{text-align:left;width:100%;padding:9px 11px}.it.on{border-color:var(--pri);background:var(--lb)}.it small{display:block;color:var(--mu)}
+.map{padding:8px;background:var(--mapbg)}svg{width:100%;height:auto;display:block}
+.blk{fill:var(--blk);stroke:var(--bd);stroke-width:1.5;cursor:pointer;transition:.15s}.blk:hover{stroke:var(--pri)}
+.blk.hit{stroke:var(--pu);stroke-width:3}.blk.sel{fill:var(--pri);stroke:var(--pri)}.blk.sel+text,.blk.sel~text.s{fill:#fff}
+svg text{fill:var(--tx);font:600 13px system-ui,sans-serif;pointer-events:none}svg text.s{font-weight:400;font-size:10.5px;fill:var(--mu)}
+.note{font-size:12.5px;color:var(--mu);margin-top:8px}.pill{display:inline-block;font-size:12px;border-radius:99px;padding:2px 9px;background:var(--lb);color:var(--pri)}
+.pill.w2{background:#fef3c7;color:var(--warn)}ul.d{padding-left:18px;margin:8px 0}.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px 10px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}
+.stat b{display:block;font-size:26px;color:var(--pri)}footer{margin:40px 0 20px;color:var(--mu);font-size:13px}
+</style></head><body>
+<header><div class="w"><div class="logo">CAMPUS <b>CONNECT</b></div>
+<nav><a href="#map">Campus map</a><a href="#dir">Directory</a><a href="#reach">Getting here</a><a href="#contact">Contact</a><button id="th" aria-label="Toggle theme">◐</button></nav></div></header>
+<main class="w">
+<section class="hero"><div class="tag">Kakatiya Institute of Technology &amp; Science, Warangal</div>
+<h1>Your entire campus. One smart platform.</h1>
+<p>Find any block, department, hostel or facility, then jump straight into Google Maps for directions to the campus. Navigate smart. Connect better.</p>
+<a class="btn pri" href="#map">Explore campus</a> <a class="btn" href="#dir">Department directory</a></section>
+
+<section id="map"><h2>Interactive campus map</h2>
+<p class="sub">Search a block, department or facility. Matching blocks light up; tap one for details.</p>
+<div class="app">
+<div class="card"><input id="q" type="search" placeholder="Try “CSE”, “library”, “hostel”…" aria-label="Search campus">
+<div class="chips" id="chips"></div><div class="list" id="list"></div></div>
+<div class="card map"><svg id="svg" viewBox="0 0 720 430" role="img" aria-label="Schematic KITSW campus map"></svg>
+<p class="note">Schematic layout, not to scale and not GPS. Block positions are illustrative until verified on campus.</p></div>
+<div class="card" id="panel"></div></div></section>
+
+<section id="dir"><h2>Department directory</h2><p class="sub">Department-to-block mapping as supplied by the Campus Connect team. Please verify on campus.</p>
+<div class="card" style="overflow:auto"><table><thead><tr><th>Department / office</th><th>Location</th></tr></thead><tbody id="tb"></tbody></table></div></section>
+
+<section><h2>Campus at a glance</h2><p class="sub">From the college's IQAC SWOC document.</p>
+<div class="grid3">
+<div class="card stat"><b>1980</b>Established by Ekasila Education Society</div>
+<div class="card stat"><b>84 / 96</b>Classrooms / laboratories</div>
+<div class="card stat"><b>25 acres</b>Dedicated playfield</div>
+<div class="card stat"><b>1,00,000+</b>Books and magazines in Central Library</div></div></section>
+
+<section id="reach"><h2>Getting to campus</h2><p class="sub">Opens Google Maps in a new tab. Distances come from third-party listings, not from this site.</p>
+<div class="grid3">
+<div class="card"><b>Directions</b><p>Route to KITSW from wherever you are. Google Maps will ask for your location itself; Campus Connect never reads or stores it.</p><div class="acts"><a class="btn pri" target="_blank" rel="noopener" id="dir1">Get directions</a><a class="btn" target="_blank" rel="noopener" id="view1">View on Google Maps</a></div></div>
+<div class="card"><b>Nearby transport</b><ul class="d"><li>Hasanparthy bus stop: about 3 km</li><li>Hasanparthy Road railway station: about 6 km</li><li>Warangal airport: about 20 km</li></ul><span class="pill w2">Approximate, per education portals</span></div>
+<div class="card"><b>Address</b><p>Opp. Yerragattu Hillock, Bheemaram Village, Hasanparthy Mandal, Warangal, Telangana 506015</p><div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.kitsw.ac.in/">College website</a><a class="btn" target="_blank" rel="noopener" href="https://www.easytourz.com/BT-EmabedTour/all/c6640f527ed80327">360° tour</a></div></div></div></section>
+
+<section><h2>Data status</h2><div class="grid3">
+<div class="card"><span class="pill">Included</span><p>Block and facility directory, search, filters, saved places, Google Maps links, official contacts.</p></div>
+<div class="card"><span class="pill w2">Pending</span><p>Verified GPS coordinates per building, real photos, floor details, library/canteen/placement offices.</p></div>
+<div class="card"><span class="pill" style="background:#ede9fe;color:var(--pu)">Needs backend</span><p>Walking routes between buildings, QR navigation, login, announcements, lost &amp; found, admin panel.</p></div></div></section>
+
+<section id="contact"><h2>Contact the college</h2><div class="card"><p><b>Principal:</b> Prof. K. Ashoka Reddy<br><b>Phone:</b> +91 7382564888, +91 9392055211<br><b>Email:</b> principal@kitsw.ac.in</p></div></section>
+<footer>Campus Connect is a student project and not an official KITSW website. Source data: kitsw.ac.in and information supplied by the team.</footer>
+</main>
+<script>
+var Q="Kakatiya Institute of Technology & Science, Hasanparthy, Warangal 506015";
+var G="https://www.google.com/maps/";
+function gs(t){return G+"search/?api=1&query="+encodeURIComponent(t)}
+function gd(){return G+"dir/?api=1&destination="+encodeURIComponent(Q)+"&travelmode=driving"}
+var L=[
+{id:"b1",n:"Block I",c:"Academic",x:20,y:20,i:["Civil Engineering Department","Dean of Planning & Execution Office"]},
+{id:"b2",n:"Block II",c:"Academic",x:200,y:20,i:["Computer Science & Engineering (CSE) Department","Central Library (Ground Floor Wing)","Dean of Research & Development Office"]},
+{id:"b3",n:"Block III",c:"Academic",x:380,y:20,i:["Electrical & Electronics Engineering (EEE) Department","Mechanical Engineering Department"]},
+{id:"b4",n:"Block IV",c:"Administrative",x:560,y:20,i:["Principal's Office","Dean of Academic Affairs","Examination Branch"],t:"Administrative Block"},
+{id:"b5",n:"Block V",c:"Academic",x:20,y:150,i:["Information Technology (IT) Department","Physical Education Facilities"]},
+{id:"b6",n:"Block VI",c:"Academic",x:200,y:150,i:["Electronics & Communication Engineering (ECE) Department","Electronics Communication and Instrumentation Engineering (ECIE) Department","Dean of Student Affairs Office"]},
+{id:"b7",n:"Block VII",c:"Innovation",x:380,y:150,i:["Innovation, Incubation, Research and Entrepreneurship (I²RE) Hub","AICTE IDEA Lab / Advanced Labs"]},
+{id:"ho",n:"Hostels",c:"Hostels",x:560,y:150,i:["Boys Hostel","New Boys Hostel Extensions","Girls Hostel"]},
+{id:"st",n:"Indoor Stadium",c:"Sports",x:20,y:280,i:["Central Indoor Sports Stadium"],t:"Central Indoor Sports Stadium"},
+{id:"au",n:"Auditorium",c:"Amenities",x:200,y:280,i:["Multi-purpose Auditorium"]},
+{id:"gh",n:"Guest House",c:"Amenities",x:380,y:280,i:["Guest House"]},
+{id:"dh",n:"Dining Hall",c:"Amenities",x:560,y:280,i:["Boys Dining Hall"]}];
+var cats=["All","Academic","Administrative","Innovation","Hostels","Sports","Amenities"],cat="All",sel=null,term="",saved=[];
+try{saved=JSON.parse(localStorage.getItem("cc_saved")||"[]")}catch(e){}
+function matches(l){var t=term.toLowerCase();if(cat!="All"&&l.c!=cat)return false;if(!t)return true;
+return (l.n+" "+(l.t||"")+" "+l.i.join(" ")).toLowerCase().indexOf(t)>-1||(t=="cse"&&/computer/i.test(l.i.join()))||(t=="library"&&/library/i.test(l.i.join()))}
+function draw(){
+var s="";L.forEach(function(l){var h=(term||cat!="All")&&matches(l);
+s+='<g data-id="'+l.id+'" tabindex="0" role="button" aria-label="'+l.n+'"><rect class="blk'+(h?" hit":"")+(sel==l.id?" sel":"")+'" x="'+l.x+'" y="'+l.y+'" width="140" height="110" rx="14"/><text x="'+(l.x+70)+'" y="'+(l.y+50)+'" text-anchor="middle">'+l.n+'</text><text class="s" x="'+(l.x+70)+'" y="'+(l.y+70)+'" text-anchor="middle">'+l.c+(saved.indexOf(l.id)>-1?" ★":"")+'</text></g>'});
+s+='<rect x="20" y="405" width="680" height="14" rx="7" fill="var(--bd)"/><text class="s" x="360" y="416" text-anchor="middle">Main road / campus entrance (position unverified)</text>';
+var sv=document.getElementById("svg");sv.innerHTML=s;
+sv.querySelectorAll("g").forEach(function(g){g.onclick=function(){pick(g.dataset.id)};g.onkeydown=function(e){if(e.key=="Enter")pick(g.dataset.id)}});
+document.getElementById("chips").innerHTML=cats.map(function(c){return '<button class="chip'+(c==cat?" on":"")+'" data-c="'+c+'">'+c+'</button>'}).join("");
+document.querySelectorAll(".chip").forEach(function(b){b.onclick=function(){cat=b.dataset.c;draw()}});
+var m=L.filter(matches);
+document.getElementById("list").innerHTML=m.length?m.map(function(l){return '<button class="it'+(sel==l.id?" on":"")+'" data-id="'+l.id+'">'+l.n+(l.t?" · "+l.t:"")+'<small>'+l.i.length+' place'+(l.i.length>1?"s":"")+'</small></button>'}).join(""):'<p class="note">No matches. Try a department name.</p>';
+document.querySelectorAll(".it").forEach(function(b){b.onclick=function(){pick(b.dataset.id)}});panel()}
+function pick(id){sel=id;draw()}
+function panel(){var p=document.getElementById("panel"),l=L.filter(function(x){return x.id==sel})[0];
+if(!l){p.innerHTML='<b>Select a location</b><p class="note">Tap a block on the map or choose one from the list to see what is inside and how to reach campus.</p>';return}
+var isS=saved.indexOf(l.id)>-1;
+p.innerHTML='<span class="pill">'+l.c+'</span><h3 style="margin:8px 0 2px">'+l.n+(l.t?" · "+l.t:"")+'</h3><b style="font-size:13px">Inside</b><ul class="d">'+l.i.map(function(i){return"<li>"+i+"</li>"}).join("")+'</ul>'+
+'<p class="note"><span class="pill w2">Coordinates pending</span> Exact GPS for this building isn’t verified yet, so Google Maps links go to the KITSW campus.</p>'+
+'<div class="acts"><a class="btn pri" target="_blank" rel="noopener" href="'+gd()+'">Directions to campus</a><a class="btn" target="_blank" rel="noopener" href="'+gs("KITSW "+(l.t||l.i[0])+" Warangal")+'">Search in Google Maps</a><button id="sv">'+(isS?"★ Saved":"☆ Save")+'</button></div>';
+document.getElementById("sv").onclick=function(){var k=saved.indexOf(l.id);k>-1?saved.splice(k,1):saved.push(l.id);try{localStorage.setItem("cc_saved",JSON.stringify(saved))}catch(e){}draw()}}
+document.getElementById("q").oninput=function(e){term=e.target.value.trim();var m=L.filter(matches);if(term&&m.length==1)sel=m[0].id;draw()};
+var rows="";L.forEach(function(l){l.i.forEach(function(i){rows+='<tr><td>'+i+'</td><td>'+l.n+(l.t?" ("+l.t+")":"")+'</td></tr>'})});
+document.getElementById("tb").innerHTML=rows;
+document.getElementById("dir1").href=gd();document.getElementById("view1").href=gs(Q);
+document.getElementById("th").onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+draw();
+</script></body></html>
