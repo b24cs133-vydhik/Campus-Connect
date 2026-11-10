@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Campus Connect · KITSW</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div class="w"><div class="logo">CAMPUS <b>CONNECT</b></div>
+<nav><a href="#map">Campus map</a><a href="#dir">Directory</a><a href="#reach">Getting here</a><a href="#contact">Contact</a><button id="th" aria-label="Toggle theme">◐</button></nav></div></header>
+<main class="w">
+<section class="hero"><div class="tag">Kakatiya Institute of Technology &amp; Science, Warangal</div>
+<h1>Your entire campus. One smart platform.</h1>
+<p>Find any block, department, hostel or facility, then jump straight into Google Maps for directions to the campus. Navigate smart. Connect better.</p>
+<a class="btn pri" href="#map">Explore campus</a> <a class="btn" href="#dir">Department directory</a></section>
+
+<section id="map"><h2>Interactive campus map</h2>
+<p class="sub">Search a block, department or facility. Matching blocks light up; tap one for details.</p>
+<div class="app">
+<div class="card"><input id="q" type="search" placeholder="Try “CSE”, “library”, “hostel”…" aria-label="Search campus">
+<div class="chips" id="chips"></div><div class="list" id="list"></div></div>
+<div class="card map"><svg id="svg" viewBox="0 0 720 430" role="img" aria-label="Schematic KITSW campus map"></svg>
+<p class="note">Schematic layout, not to scale and not GPS. Block positions are illustrative until verified on campus.</p></div>
+<div class="card" id="panel"></div></div></section>
+
+<section id="dir"><h2>Department directory</h2><p class="sub">Department-to-block mapping as supplied by the Campus Connect team. Please verify on campus.</p>
+<div class="card" style="overflow:auto"><table><thead><tr><th>Department / office</th><th>Location</th></tr></thead><tbody id="tb"></tbody></table></div></section>
+
+<section><h2>Campus at a glance</h2><p class="sub">From the college's IQAC SWOC document.</p>
+<div class="grid3">
+<div class="card stat"><b>1980</b>Established by Ekasila Education Society</div>
+<div class="card stat"><b>84 / 96</b>Classrooms / laboratories</div>
+<div class="card stat"><b>25 acres</b>Dedicated playfield</div>
+<div class="card stat"><b>1,00,000+</b>Books and magazines in Central Library</div></div></section>
+
+<section id="reach"><h2>Getting to campus</h2><p class="sub">Opens Google Maps in a new tab. Distances come from third-party listings, not from this site.</p>
+<div class="grid3">
+<div class="card"><b>Directions</b><p>Route to KITSW from wherever you are. Google Maps will ask for your location itself; Campus Connect never reads or stores it.</p><div class="acts"><a class="btn pri" target="_blank" rel="noopener" id="dir1">Get directions</a><a class="btn" target="_blank" rel="noopener" id="view1">View on Google Maps</a></div></div>
+<div class="card"><b>Nearby transport</b><ul class="d"><li>Hasanparthy bus stop: about 3 km</li><li>Hasanparthy Road railway station: about 6 km</li><li>Warangal airport: about 20 km</li></ul><span class="pill w2">Approximate, per education portals</span></div>
+<div class="card"><b>Address</b><p>Opp. Yerragattu Hillock, Bheemaram Village, Hasanparthy Mandal, Warangal, Telangana 506015</p><div class="acts"><a class="btn" target="_blank" rel="noopener" href="https://www.kitsw.ac.in/">College website</a><a class="btn" target="_blank" rel="noopener" href="https://www.easytourz.com/BT-EmabedTour/all/c6640f527ed80327">360° tour</a></div></div></div></section>
+
+<section><h2>Data status</h2><div class="grid3">
+<div class="card"><span class="pill">Included</span><p>Block and facility directory, search, filters, saved places, Google Maps links, official contacts.</p></div>
+<div class="card"><span class="pill w2">Pending</span><p>Verified GPS coordinates per building, real photos, floor details, library/canteen/placement offices.</p></div>
+<div class="card"><span class="pill" style="background:#ede9fe;color:var(--pu)">Needs backend</span><p>Walking routes between buildings, QR navigation, login, announcements, lost &amp; found, admin panel.</p></div></div></section>
+
+<section id="contact"><h2>Contact the college</h2><div class="card"><p><b>Principal:</b> Prof. K. Ashoka Reddy<br><b>Phone:</b> +91 7382564888, +91 9392055211<br><b>Email:</b> principal@kitsw.ac.in</p></div></section>
+<footer>Campus Connect is a student project and not an official KITSW website. Source data: kitsw.ac.in and information supplied by the team.</footer>
+</main>
+<script src="script.js"></script></body></html>
